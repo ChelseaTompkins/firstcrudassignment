@@ -72,6 +72,7 @@ app.delete("/delete/users/:id", function(req, res){
 
     if(user.id === index){
       userInfo.splice(i, 1);
+      //Using filter -
       // let filteredInfo = userInfo.filter((item) => {
       //   return item.id !== index
       // })
