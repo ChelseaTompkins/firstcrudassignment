@@ -71,7 +71,10 @@ app.delete("/delete/users/:id", function(req, res){
     let user = userInfo[i];
 
     if(user.id === index){
-      userInfo.splice(user, 1)[index];
+      userInfo.splice(i, 1);
+      // let filteredInfo = userInfo.filter((item) => {
+      //   return item.id !== index
+      // })
       fs.writeFileSync('./storage.json', JSON.stringify(userInfo));
       res.json(userInfo);
       return;
